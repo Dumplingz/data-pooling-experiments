@@ -1,0 +1,6 @@
+# TPC-H
+*.zip
+TPC-H V*
+
+# venv
+*venv*
