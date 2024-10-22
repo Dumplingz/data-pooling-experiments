@@ -20,6 +20,8 @@ def generate_data(datasize, datasize_dir, datasize_dict):
     # cd back to working directory
     os.chdir(cwd)
 
+
+
 def main():
     datasize_dict = {'1MB': 0.001, '10MB': 0.01, '100MB': 0.1, '1GB': 1, '10GB': 10}
 
@@ -33,13 +35,14 @@ def main():
         os.makedirs(new_dir, exist_ok=True)
         datasize_dirs += [os.path.join(cwd, new_dir)]
 
+    # generate data for each datasize
     for datasize, datasize_dir in zip(DATASIZES, datasize_dirs):
         # check if tbl data already exists
         if os.path.exists(os.path.join(datasize_dir,"customer.tbl")):
-            print(f"Data already exists for .tbl files of datasize {datasize}. Skipping data generation.")
+            print(f"Data already exists for '.tbl' files of datasize {datasize}. Skipping data generation.")
         else:
-            generate_data(datasize, datasize_dir, datasize_dict)    
-    
+            generate_data(datasize, datasize_dir, datasize_dict)
+
     
 if __name__ == "__main__":
     main()

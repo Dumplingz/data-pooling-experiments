@@ -11,4 +11,5 @@
     WORKLOAD = TPCH
     ```
 3. Make while in the `TPC-H V3.0.1/dbgen` directory: `make -f makefile.suite`
-4. Run the following command to generate the data while in the root directory of the project:
+4. Run the following command to generate the data while in the root directory of the project: `python generate_tpch_data.py `
+5. The data will be generated in the tpch_workdir directory under each tpch database size (e.g. `tpch_workdir/1GB/customer.tbl`)
