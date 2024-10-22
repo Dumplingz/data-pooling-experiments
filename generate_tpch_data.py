@@ -36,7 +36,7 @@ def main():
     for datasize, datasize_dir in zip(DATASIZES, datasize_dirs):
         # check if tbl data already exists
         if os.path.exists(os.path.join(datasize_dir,"customer.tbl")):
-            print("Data already exists. Skipping data generation.")
+            print(f"Data already exists for .tbl files of datasize {datasize}. Skipping data generation.")
         else:
             generate_data(datasize, datasize_dir, datasize_dict)    
     
