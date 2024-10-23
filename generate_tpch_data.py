@@ -3,8 +3,8 @@ import subprocess
 import csv
 
 TPCH_GEN_DIR = "./TPC-H V3.0.1/dbgen"
-# DATASIZES = ['1MB', '10MB', '100MB', '1GB', '10GB']
-DATASIZES = ['1MB', '10MB']
+DATASIZES = ['1MB', '10MB', '100MB', '1GB', '10GB']
+# DATASIZES = ['1MB', '10MB']
 SPLIT_RATIOS = [0.09,0.5]
 
 def select_custkey(file_name, out_file):
