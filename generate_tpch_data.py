@@ -102,7 +102,7 @@ def main():
     # split orders table for each datasize
     cwd = os.getcwd()
     for data_size, datasize_dir in zip(DATASIZES, datasize_dirs):
-        print(f"Trying to split orders in directory {datasize_dir}.")
+        print(f"Trying to split orders for size {data_size} in directory {datasize_dir}.")
         if all([os.path.exists(os.path.join(datasize_dir,f"split{ratio}/orders1.tbl")) for ratio in SPLIT_RATIOS]):
             print(f"Data already split for orders on {data_size}. Skipping data splitting.")
             continue
@@ -114,7 +114,7 @@ def main():
     
     # select custkey from the split orders table
     for data_size, datasize_dir in zip(DATASIZES, datasize_dirs):
-        print(f"Trying to extract custkey in directory {datasize_dir}")
+        print(f"Trying to extract custkey for size {data_size} in directory {datasize_dir}")
         if all([os.path.exists(os.path.join(datasize_dir,f"split{ratio}/orders1.csv")) for ratio in SPLIT_RATIOS]):
             print(f"Custkey already extracted on {data_size}. Skipping.")
             continue
