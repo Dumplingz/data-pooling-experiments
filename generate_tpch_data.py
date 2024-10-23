@@ -117,7 +117,7 @@ def main():
         print(f"Checking directory {datasize_dir}")
         if all([os.path.exists(os.path.join(datasize_dir,f"split{ratio}/orders1.csv")) for ratio in SPLIT_RATIOS]):
             print(f"Data already split for custkey on {datasize}. Skipping data splitting.")
-            # continue
+            continue
         os.chdir(datasize_dir)
         for ratio in SPLIT_RATIOS:
             select_custkey(f"split{ratio}/orders1.tbl", f"split{ratio}/orders1.csv")
