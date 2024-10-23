@@ -104,7 +104,7 @@ def main():
     for data_size, datasize_dir in zip(DATASIZES, datasize_dirs):
         print(f"Checking directory {datasize_dir}")
         if all([os.path.exists(os.path.join(datasize_dir,f"split{ratio}/orders1.tbl")) for ratio in SPLIT_RATIOS]):
-            print(f"Data already split for orders on {datasize}. Skipping data splitting.")
+            print(f"Data already split for orders on {data_size}. Skipping data splitting.")
             continue
         os.chdir(datasize_dir)
         for ratio in SPLIT_RATIOS:
@@ -116,7 +116,7 @@ def main():
     for data_size, datasize_dir in zip(DATASIZES, datasize_dirs):
         print(f"Checking directory {datasize_dir}")
         if all([os.path.exists(os.path.join(datasize_dir,f"split{ratio}/orders1.csv")) for ratio in SPLIT_RATIOS]):
-            print(f"Data already split for custkey on {datasize}. Skipping data splitting.")
+            print(f"Data already split for custkey on {data_size}. Skipping data splitting.")
             continue
         os.chdir(datasize_dir)
         for ratio in SPLIT_RATIOS:
