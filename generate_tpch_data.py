@@ -39,7 +39,8 @@ def split_file(file_name, out_file, ratio):
     with open(second_file_path, 'w') as second_output_file:
         second_output_file.writelines(second_file_content)
 
-def generate_data(datasize, datasize_dir, datasize_dict):
+# generate tpch data and put it into the directory specified
+def generate_data(datasize, directory, datasize_dict):
     # get working directory
     cwd = os.getcwd()
     # cd to dbgen directory and generate data
@@ -48,8 +49,8 @@ def generate_data(datasize, datasize_dir, datasize_dict):
     print(f"Generating data within {tpch_dir}")
 
     subprocess.run(["./dbgen",str(datasize_dict[datasize])])
-    print("Moving data to",datasize_dir)
-    subprocess.run(f"mv *.tbl {datasize_dir}", shell=True)
+    print("Moving data to",directory)
+    subprocess.run(f"mv *.tbl {directory}", shell=True)
 
     # cd back to working directory
     os.chdir(cwd)
