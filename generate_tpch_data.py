@@ -29,8 +29,10 @@ def select_custkey(file_name, out_file):
             writer.writerow([custkey])
 
 
-# split 1MB ... 10GB orders.csv into two files of size ratio "ratio"
 def split_file(file_name, out_file, ratio):
+    """
+    split 1MB ... 10GB orders.csv into two files of size ratio "ratio"
+    """
     full_file_path = "./" + file_name
     out_path = f"./split{ratio}"
     # create directory if it does not exist
@@ -62,8 +64,10 @@ def split_file(file_name, out_file, ratio):
     with open(second_file_path, 'w') as second_output_file:
         second_output_file.writelines(second_file_content)
 
-# generate tpch data and put it into the directory specified
-def generate_data(datasize, directory, datasize_dict):
+def generate_tpch_data(datasize, directory, datasize_dict):
+    """
+    generate tpch data and put it into the directory specified
+    """
     # get working directory
     cwd = os.getcwd()
     # cd to dbgen directory and generate data
@@ -97,7 +101,7 @@ def main():
         if os.path.exists(os.path.join(datasize_dir,"customer.tbl")):
             print(f"Data already exists for '.tbl' files of datasize {datasize}. Skipping data generation.")
         else:
-            generate_data(datasize, datasize_dir, datasize_dict)
+            generate_tpch_data(datasize, datasize_dir, datasize_dict)
 
     # split orders table for each datasize
     cwd = os.getcwd()
