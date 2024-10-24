@@ -67,6 +67,14 @@ def split_file(file_name, out_file, ratio):
 def generate_tpch_data(datasize, directory, datasize_dict):
     """
     generate tpch data and put it into the directory specified
+    
+    Parameters:
+    - datasize: str, size of the data to generate (e.g. 1MB, 10MB, 100MB, 1GB, 10GB)
+    - directory: str, directory to put the generated data
+    - datasize_dict: dict, dictionary mapping datasize string to scale factor
+    
+    Returns:
+    - None
     """
     # get working directory
     cwd = os.getcwd()
