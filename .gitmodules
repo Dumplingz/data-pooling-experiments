@@ -1,0 +1,7 @@
+[submodule "datastation-escrow"]
+	path = datastation-escrow
+	url = https://github.com/TheDataStation/datastation-escrow.git
+	branch = chz-evaluations
+[submodule "conclave"]
+	path = conclave
+	url = https://github.com/Dumplingz/conclave.git
