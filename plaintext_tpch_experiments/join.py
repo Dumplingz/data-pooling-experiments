@@ -2,6 +2,7 @@ import duckdb
 import os
 import sys
 import time
+import csv
 
 if __name__ == '__main__':
     # Experiment setups
@@ -49,13 +50,20 @@ if __name__ == '__main__':
     conn = duckdb.connect()
     conn.execute(table_query)
     conn.execute(load_query)
+    
+    # create exp directory
+    os.makedirs(f"experiments", exist_ok=True)
 
     # run trials
     for _ in range(num_trials):
         start_time = time.perf_counter()
         res = conn.execute(join_query).fetchall()
         end_time = time.perf_counter()
+        total_time = end_time - start_time
         for r in res:
             print(res)
             # break
-        print(f"Time taken: {end_time - start_time}")
+        print(f"Time taken: {total_time}")
+        with open(f"experiments/{num_MB}.csv", "a") as file:
+            writer = csv.writer(file)
+            writer.writerow([total_time])

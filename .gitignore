@@ -7,3 +7,4 @@ TPC-H V*
 
 # tpch_workdir
 tpch_workdir
+*.log
