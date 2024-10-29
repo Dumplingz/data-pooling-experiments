@@ -53,7 +53,7 @@ if __name__ == '__main__':
     conn.execute(load_query)
     
     # create exp directory
-    os.makedirs(f"experiments", exist_ok=True)
+    os.makedirs(f"experiments/join", exist_ok=True)
 
     # run trials
     for _ in range(num_trials):
@@ -65,7 +65,7 @@ if __name__ == '__main__':
             print(res)
             # break
         print(f"Time taken: {total_time}")
-        with open(f"experiments/{num_MB}.csv", "a") as file:
+        with open(f"experiments/join/{num_MB}.csv", "a") as file:
             writer = csv.writer(file)
             writer.writerow([total_time])
 
