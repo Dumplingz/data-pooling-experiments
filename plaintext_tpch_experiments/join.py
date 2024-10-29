@@ -10,6 +10,7 @@ if __name__ == '__main__':
 
     num_trials = int(sys.argv[2])
     
+    total_start = time.perf_counter()
     # get agent des
     agent_des = []
     for agent in ["1", "2"]:
@@ -67,3 +68,6 @@ if __name__ == '__main__':
         with open(f"experiments/{num_MB}.csv", "a") as file:
             writer = csv.writer(file)
             writer.writerow([total_time])
+
+    total_end = time.perf_counter()
+    print(total_end - total_start)
