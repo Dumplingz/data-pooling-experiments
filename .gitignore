@@ -2,7 +2,8 @@
 *.zip
 TPC-H V*
 
-# venv
+# python files
+__pycache__
 *venv*
 
 # tpch_workdir
