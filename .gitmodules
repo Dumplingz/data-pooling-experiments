@@ -5,3 +5,6 @@
 [submodule "conclave"]
 	path = conclave
 	url = https://github.com/Dumplingz/conclave.git
+[submodule "lattigo-experiments"]
+	path = lattigo-experiments
+	url = https://github.com/Dumplingz/lattigo-experiments.git

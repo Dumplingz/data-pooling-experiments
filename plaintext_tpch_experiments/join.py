@@ -46,11 +46,37 @@ if __name__ == '__main__':
     join_query = """
     SELECT COUNT(*) FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;
     """
+
+    full_query = """
+CREATE TABLE ORDERS1  ( O_ORDERKEY       INTEGER NOT NULL,
+            O_CUSTKEY        INTEGER NOT NULL,
+            O_ORDERSTATUS    CHAR(1) NOT NULL,
+            O_TOTALPRICE     DECIMAL(15,2) NOT NULL,
+            O_ORDERDATE      DATE NOT NULL,
+            O_ORDERPRIORITY  CHAR(15) NOT NULL,  
+            O_CLERK          CHAR(15) NOT NULL, 
+            O_SHIPPRIORITY   INTEGER NOT NULL,
+            O_COMMENT        VARCHAR(79) NOT NULL);
+
+CREATE TABLE ORDERS2  ( O_ORDERKEY       INTEGER NOT NULL,
+            O_CUSTKEY        INTEGER NOT NULL,
+            O_ORDERSTATUS    CHAR(1) NOT NULL,
+            O_TOTALPRICE     DECIMAL(15,2) NOT NULL,
+            O_ORDERDATE      DATE NOT NULL,
+            O_ORDERPRIORITY  CHAR(15) NOT NULL,  
+            O_CLERK          CHAR(15) NOT NULL, 
+            O_SHIPPRIORITY   INTEGER NOT NULL,
+            O_COMMENT        VARCHAR(79) NOT NULL);
+
+COPY ORDERS1 FROM '{de1_filepath}' DELIMITER '|';
+COPY ORDERS2 FROM '{de2_filepath}' DELIMITER '|';
+
+SELECT COUNT(*) FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"""
     
     # run setup queries
     conn = duckdb.connect()
-    conn.execute(table_query)
-    conn.execute(load_query)
+    # conn.execute(table_query)
+    # conn.execute(load_query)
     
     # create exp directory
     os.makedirs(f"experiments/join", exist_ok=True)
@@ -58,7 +84,8 @@ if __name__ == '__main__':
     # run trials
     for _ in range(num_trials):
         start_time = time.perf_counter()
-        res = conn.execute(join_query).fetchall()
+        # res = conn.execute(join_query).fetchall()
+        res = conn.execute(full_query).fetchall()
         end_time = time.perf_counter()
         total_time = end_time - start_time
         for r in res:
