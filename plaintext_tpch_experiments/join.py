@@ -75,7 +75,6 @@ SELECT COUNT(*) FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"
     
     query = full_query.format(de1_filepath=agent_des[0], de2_filepath=agent_des[1])
     # run setup queries
-    conn = duckdb.connect()
     # conn.execute(table_query)
     # conn.execute(load_query)
     
@@ -85,6 +84,8 @@ SELECT COUNT(*) FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"
     # run trials
     for _ in range(num_trials):
         start_time = time.perf_counter()
+        conn = duckdb.connect()
+
         # res = conn.execute(join_query).fetchall()
         res = conn.execute(query).fetchall()
         end_time = time.perf_counter()
