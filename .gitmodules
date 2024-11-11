@@ -8,3 +8,6 @@
 [submodule "lattigo-experiments"]
 	path = lattigo-experiments
 	url = https://github.com/Dumplingz/lattigo-experiments.git
+[submodule "chz-sok-nn-experiments"]
+	path = chz-sok-nn-experiments
+	url = https://github.com/Dumplingz/chz-sok-nn-experiments.git
