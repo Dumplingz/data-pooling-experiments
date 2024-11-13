@@ -92,12 +92,6 @@ SELECT DISTINCT o1.o_custkey FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o
         total_time = end_time - start_time
         i = 0
         print(res)
-        
-        r1 = conn.execute("SELECT DISTINCT o_custkey FROM ORDERS1").fetchdf()
-        r2 = conn.execute("SELECT DISTINCT o_custkey FROM ORDERS2").fetchdf()
-        
-        print(r1)
-        print(r2)
         # for r in res:
         #     print(res)
             # break
