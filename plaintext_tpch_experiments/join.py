@@ -71,7 +71,7 @@ CREATE TABLE ORDERS2  ( O_ORDERKEY       INTEGER NOT NULL,
 COPY ORDERS1 FROM '{de1_filepath}' DELIMITER '|';
 COPY ORDERS2 FROM '{de2_filepath}' DELIMITER '|';
 
-SELECT COUNT(*) FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"""
+SELECT DISTINCT o1.o_custkey FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"""
     
     query = full_query.format(de1_filepath=agent_des[0], de2_filepath=agent_des[1])
     # run setup queries
@@ -87,12 +87,22 @@ SELECT COUNT(*) FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"
         conn = duckdb.connect()
 
         # res = conn.execute(join_query).fetchall()
-        res = conn.execute(query).fetchall()
+        res = conn.execute(query).fetchdf()
         end_time = time.perf_counter()
         total_time = end_time - start_time
-        for r in res:
-            print(res)
+        i = 0
+        print(res)
+        
+        r1 = conn.execute("SELECT DISTINCT o_custkey FROM ORDERS1").fetchdf()
+        r2 = conn.execute("SELECT DISTINCT o_custkey FROM ORDERS2").fetchdf()
+        
+        print(r1)
+        print(r2)
+        # for r in res:
+        #     print(res)
             # break
+            # if i > 1:
+            #     break
         print(f"Time taken: {total_time}")
         with open(f"experiments/join/{num_MB}.csv", "a") as file:
             writer = csv.writer(file)
