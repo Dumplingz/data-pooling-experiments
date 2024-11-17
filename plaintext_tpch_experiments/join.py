@@ -71,6 +71,7 @@ CREATE TABLE ORDERS2  ( O_ORDERKEY       INTEGER NOT NULL,
 COPY ORDERS1 FROM '{de1_filepath}' DELIMITER '|';
 COPY ORDERS2 FROM '{de2_filepath}' DELIMITER '|';
 
+
 SELECT DISTINCT o1.o_custkey FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o2.o_custkey;"""
     
     query = full_query.format(de1_filepath=agent_des[0], de2_filepath=agent_des[1])
