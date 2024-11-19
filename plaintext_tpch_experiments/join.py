@@ -91,11 +91,11 @@ SELECT DISTINCT o1.o_custkey FROM ORDERS1 o1 JOIN ORDERS2 o2 ON o1.o_custkey = o
         res = conn.execute(query).fetchdf()
         end_time = time.perf_counter()
         total_time = end_time - start_time
-        i = 0
-        print(res)
-        # for r in res:
-        #     print(res)
-            # break
+        # i = 0
+        # print(res)
+        for r in res:
+            print(r)
+            break
             # if i > 1:
             #     break
         print(f"Time taken: {total_time}")
