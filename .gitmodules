@@ -8,9 +8,9 @@
 [submodule "lattigo-experiments"]
 	path = lattigo-experiments
 	url = https://github.com/Dumplingz/lattigo-experiments.git
-[submodule "chz-sok-nn-experiments"]
-	path = chz-sok-nn-experiments
-	url = https://github.com/Dumplingz/chz-sok-nn-experiments.git
+[submodule "chz-eab-nn-experiments"]
+	path = chz-eab-nn-experiments
+	url = https://github.com/Dumplingz/chz-eab-nn-experiments.git
 [submodule "chz-eab-nvflare-experiments"]
 	path = chz-eab-nvflare-experiments
 	url = https://github.com/Dumplingz/chz-eab-nvflare-experiments.git
