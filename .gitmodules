@@ -11,6 +11,6 @@
 [submodule "chz-sok-nn-experiments"]
 	path = chz-sok-nn-experiments
 	url = https://github.com/Dumplingz/chz-sok-nn-experiments.git
-[submodule "chz-sok-nvflare-experiments"]
-	path = chz-sok-nvflare-experiments
-	url = https://github.com/Dumplingz/chz-sok-nvflare-experiments.git
+[submodule "chz-eab-nvflare-experiments"]
+	path = chz-eab-nvflare-experiments
+	url = https://github.com/Dumplingz/chz-eab-nvflare-experiments.git
