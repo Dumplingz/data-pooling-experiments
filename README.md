@@ -1,4 +1,4 @@
-# Parent Repository for all SoK experiments
+# Parent Repository for all EAB experiments
 
 
 ## TPC-H Setup
