@@ -14,3 +14,6 @@
 [submodule "chz-eab-nvflare-experiments"]
 	path = chz-eab-nvflare-experiments
 	url = https://github.com/Dumplingz/chz-eab-nvflare-experiments.git
+[submodule "ccfjoin"]
+	path = ccfjoin
+	url = https://github.com/tapansriv/ccfjoin
