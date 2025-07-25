@@ -9,10 +9,10 @@
 	path = lattigo-experiments
 	url = https://github.com/Dumplingz/lattigo-experiments.git
 [submodule "eab-nn-experiments"]
-	path = chz-eab-nn-experiments
+	path = eab-nn-experiments
 	url = https://github.com/Dumplingz/eab-nn-experiments.git
 [submodule "eab-nvflare-experiments"]
-	path = chz-eab-nvflare-experiments
+	path = eab-nvflare-experiments
 	url = https://github.com/Dumplingz/eab-nvflare-experiments.git
 [submodule "ccfjoin"]
 	path = ccfjoin
