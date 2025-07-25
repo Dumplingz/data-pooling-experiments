@@ -2,6 +2,15 @@
 
 # Parent Repository for all EAB experiments
 
+This repository contains the experimental code and results in the paper "Running Functions on Pooled Data without Leakage: Comparing Solutions Over Scope, Trust, and Performance".
+
+It has a number of submodules, each of which contains the code and results for either a group of experiments or a specific experiment. The submodules are:
+- [lattigo-experiments](https://anonymous.4open.science/r/lattigo-experiments-1611/README.md): Experimental code and results for Lattigo.
+- [eab-nn-experiments](https://anonymous.4open.science/r/eab-nn-experiments-5959/README.md): Experimental code and results for PyTorch and Crypten.
+- [eab-nvflare-experiments](eab-nvflare-experiments): Experimental code and results for NVFlare.
+- [ccfjoin](https://anonymous.4open.science/r/ccfjoin-F12C/README.md): Experimental code and results for CCF.
+- [datastation-escrow](https://anonymous.4open.science/r/datastation-escrow-7427/README.md): Experimental code and results for Data Station.
+
 
 ## TPC-H Setup
 1. Add unzipped TPC-H generation files to this directory
