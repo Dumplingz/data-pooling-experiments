@@ -5,11 +5,12 @@
 This repository contains the experimental code and results in the paper "Running Functions on Pooled Data without Leakage: Comparing Solutions Over Scope, Trust, and Performance".
 
 It has a number of submodules, each of which contains the code and results for either a group of experiments or a specific experiment. The submodules are:
-- [lattigo-experiments](https://anonymous.4open.science/r/lattigo-experiments-1611/README.md): Experimental code and results for Lattigo.
-- [eab-nn-experiments](https://anonymous.4open.science/r/eab-nn-experiments-5959/README.md): Experimental code and results for PyTorch and Crypten.
-- [eab-nvflare-experiments](https://anonymous.4open.science/r/eab-nvflare-experiments-078E/README.md): Experimental code and results for NVFlare.
-- [ccfjoin](https://anonymous.4open.science/r/ccfjoin-F12C/README.md): Experimental code and results for CCF.
-- [datastation-escrow](https://anonymous.4open.science/r/datastation-escrow-7427/README.md): Experimental code and results for Data Station.
+- [lattigo-experiments](https://github.com/Dumplingz/lattigo-experiments.git): Experimental code and results for Lattigo.
+- [eab-nn-experiments](https://github.com/Dumplingz/eab-nn-experiments.git): Experimental code and results for PyTorch and Crypten.
+- [eab-nvflare-experiments](https://github.com/Dumplingz/eab-nvflare-experiments.git): Experimental code and results for NVFlare.
+- [ccfjoin](https://github.com/tapansriv/ccfjoin.git): Experimental code and results for CCF.
+- [datastation-escrow](https://github.com/TheDataStation/datastation-escrow/tree/447cf7146e0a9464a779c612fc6bc45105175ca7): Experimental code and results for Data Station.
+- [secretflow-experiments](https://github.com/Dumplingz/secretflow-experiments.git): Experimental code and results for Secretflow.
 
 
 ## TPC-H Setup
