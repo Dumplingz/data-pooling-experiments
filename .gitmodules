@@ -17,3 +17,6 @@
 [submodule "ccfjoin"]
 	path = ccfjoin
 	url = https://github.com/tapansriv/ccfjoin
+[submodule "secretflow-experiments"]
+	path = secretflow-experiments
+	url = https://github.com/Dumplingz/secretflow-experiments.git
